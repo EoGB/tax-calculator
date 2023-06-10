@@ -30,7 +30,7 @@ class main():
             #self.run()
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("iq5ac")
-        taxBox.element.value = "£"+str(totalTax)
+        taxBox.element.innerHTML = "£"+str(totalTax)
         #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
         #self.run()
 
