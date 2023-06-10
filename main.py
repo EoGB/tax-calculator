@@ -43,3 +43,7 @@ def parseRatesAndBands():
         bands[bands.index(j)] = float(j.strip())
     global main
     main = main(rates, bands)
+
+def start():
+    parseRatesAndBands()
+    main.run()
