@@ -29,16 +29,16 @@ class main():
             print("no tax levied")
             #self.run()
         totalTax = self.recurseTax(bandIndex)
-        taxBox = Element("iq5ac")
+        taxBox = Element("tax-value")
         taxBox.element.innerText = "£"+str(totalTax)
-        print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
+        #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
         #self.run()
 
 def parseRatesAndBands():
-    rates = Element("rates-box").value.split(",")
+    rates = Element("ie9a9").value.split(",")
     for i in rates:
         rates[rates.index(i)] = float(i.strip())
-    bands = Element("bands-box").value.split(",")
+    bands = Element("i2t08").value.split(",")
     for j in bands:
         bands[bands.index(j)] = float(j.strip())
     global main
