@@ -31,7 +31,7 @@ class main():
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("iq5ac")
         taxBox.element.innerText = "£"+str(totalTax)
-        #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
+        print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
         #self.run()
 
 def parseRatesAndBands():
