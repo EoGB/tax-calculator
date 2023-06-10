@@ -22,14 +22,16 @@ class main():
         return levy
                 
     def run(self):
-        salaryBox = Element("salary-box")
+        salaryBox = Element("ivtm8")
         self.salary = float(salaryBox.element.value)
         bandIndex = self.determineBands()
         if type(bandIndex) == str:
             print("no tax levied")
             #self.run()
         totalTax = self.recurseTax(bandIndex)
-        print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
+        taxBox = Element("iq5ac")
+        taxBox.element.value = "£"+str(totalTax)
+        #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
         #self.run()
 
 def parseRatesAndBands():
