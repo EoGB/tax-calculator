@@ -35,15 +35,23 @@ class main():
         #self.run()
 
 def parseRatesAndBands():
-    rates = Element("ie9a9").value.split(",")
-    for i in rates:
-        rates[rates.index(i)] = float(i.strip())
-    bands = Element("i2t08").value.split(",")
-    for j in bands:
-        bands[bands.index(j)] = float(j.strip())
-    global main
-    main = main(rates, bands)
+    try:
+        rates = Element("ie9a9").value.split(",")
+        for i in rates:
+            rates[rates.index(i)] = float(i.strip())
+        bands = Element("i2t08").value.split(",")
+        for j in bands:
+            bands[bands.index(j)] = float(j.strip())
+        global main
+        main = main(rates, bands)
+    except:
+        taxBox = Element("tax-value")
+        taxBox.element.innerText = "err: parse rates and bands failed"
 
 def start():
-    parseRatesAndBands()
-    main.run()
+    try:
+        parseRatesAndBands()
+        main.run()
+    except:
+        taxBox = Element("tax-value")
+        taxBox.element.innerText = "err: parse rates and bands failed"
