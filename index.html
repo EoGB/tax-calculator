@@ -34,7 +34,7 @@
 					<b id="i1m0t">only
 					</b>.
 				  </div>
-				  <input type="number" name="salary-box" placeholder="" id="ivtm8"/>
+				  <input type="text" name="salary-box" placeholder="" id="ivtm8"/>
 				  <button type="button" id="ito4w">Calculate</button>
 				  <div id="iue8m">Tax to Levy:
 				  </div>
@@ -42,11 +42,11 @@
 				<div class="gjs-cell" id="ikugp">
 				  <div id="i78tr">
 					<div role="tablist" class="tab-container" id="i3g4q">
-					  <div role="tab" aria-controls="is3if" id="igkld" class="tab">
-						<span id="invws">Bands</span>
-					  </div>
 					  <div role="tab" aria-controls="itmqz" id="iwhxo" class="tab">
-						<span id="ivl42">Rates</span>
+						<span id="ivl42">Bands</span>
+					  </div>
+					  <div role="tab" aria-controls="ik94xj" id="if1igh" class="tab">
+						<span id="icn1if">Rates</span>
 					  </div>
 					  <div role="tab" aria-controls="isqfdf" id="iz6w6" class="tab">
 						<span id="izcqf">Parse Values</span>
@@ -56,7 +56,7 @@
 					  </div>
 					</div>
 					<div class="tab-contents" id="i9cyf">
-					  <div role="tabpanel" id="is3if" aria-labelledby="igkld" hidden class="tab-content">
+					  <div role="tabpanel" id="itmqz" aria-labelledby="iwhxo" hidden class="tab-content">
 						<div id="i4sq7">
 						  <b>Bands
 						  </b> are entered as the 
@@ -66,21 +66,6 @@
 						  </b>, e.g. 12500,20000,35000,etc. The calculator can strip whitespace, but it is best practice to enter all characters adjacent with 
 						  <b>no spaces
 						  </b>.
-						  <br/>
-						</div>
-					  </div>
-					  <div role="tabpanel" id="itmqz" aria-labelledby="iwhxo" hidden class="tab-content">
-						<div id="ibw4j">
-						  <b id="ixles">Rates
-						  </b> are entered as a 
-						  <b>decimal
-						  </b> representation of the respective band's percentage i.e. 0.1 for 10% and so on. Rates must be entered as 
-						  <b>comma separated values
-						  </b>. The 
-						  <b>first rate
-						  </b> entered will correlate to the 
-						  <b>first band
-						  </b> entered as described above.
 						  <br/>
 						</div>
 					  </div>
@@ -100,6 +85,21 @@
 						  </b> enter the 
 						  <b>numerical representation
 						  </b> of the salary - e.g. £15,000 = 15000
+						</div>
+					  </div>
+					  <div role="tabpanel" id="ik94xj" aria-labelledby="if1igh" hidden class="tab-content">
+						<div id="ibw4j">
+						  <b id="ixles">Rates
+						  </b> are entered as a 
+						  <b>decimal
+						  </b> representation of the respective band's percentage i.e. 0.1 for 10% and so on. Rates must be entered as 
+						  <b>comma separated values
+						  </b>. The 
+						  <b>first rate
+						  </b> entered will correlate to the 
+						  <b>first band
+						  </b> entered as described above.
+						  <br/>
 						</div>
 					  </div>
 					</div>

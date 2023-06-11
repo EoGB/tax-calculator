@@ -76,6 +76,9 @@ body {
   flex-grow:1;
   flex-basis:100%;
 }
+#ikugp{
+  border:2px solid #980000;
+}
 #ifcs7{
   height:582px;
   margin:-2px 0px 0px 0px;
@@ -124,9 +127,6 @@ body {
   display:block;
   margin:0px 0px 0px 23px;
   font-size:27px;
-}
-#i06uj:hover{
-  margin:0 0px 0 0;
 }
 #ivtm8{
   position:relative;
@@ -195,13 +195,6 @@ body {
 #ivl42{
   font-family:Trebuchet MS, Helvetica, sans-serif;
 }
-#invws{
-  font-family:Trebuchet MS, Helvetica, sans-serif;
-  color:#000000;
-}
-#igkld{
-  color:#ffffff;
-}
 #i5jdmo{
   padding:10px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
@@ -211,6 +204,9 @@ body {
   padding:10px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
   font-size:19px;
+}
+#icn1if{
+  font-family:Trebuchet MS, Helvetica, sans-serif;
 }
 @keyframes fadeEffect{
   from{
@@ -225,6 +221,7 @@ body {
     flex-wrap:wrap;
   }
 }
+
 
 /* py-config - not a component */
 py-config {
