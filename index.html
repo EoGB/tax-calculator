@@ -7,31 +7,154 @@
 			<script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
           </head>
 		  
-          <body>
+          <body id="icpo">
 		  <py-config src="./pyscript.toml"></py-config>
 			<py-script src="./main.py"></py-script>
 			  <img id="ipzpk" src="https://i.imgur.com/f5hqPQC.png"/>
-				  <div id="igaqu">Income Tax Calculator</div>
-				  <div class="gjs-row" id="ifcs7">
-					  <div class="gjs-cell" id="iyvd8">
-						  <button type="button" id="ig9fl" py-click="parseRatesAndBands()">Parse Values</button>
-						  <div id="if4rm">Bands - Enter as comma separated values <b id="iyvul">only</b>.</div>
-						  <input type="text" id="i2t08" name="bands-box" value="12500,20000,35000,50000,75000,90000"/>
-						  <div id="i06uj">Rates - Enter as comma separated values <b id="iyar2">only</b>.</div>
-						  <input type="text" name="rates-box" id="ie9a9" value="0.1,0.175,0.25,0.375,0.4,0.45"/>
-						  <div id="il70g">________________________________________________________________________________________________</div>
-						  <div id="tax-value" title="TaxValue">£0.00</div><div id="iq5ac">Salary - Enter as numerical value <b id="i1m0t">only</b>.</div>
-						  <input type="text" name="salary-box" id="ivtm8"/>
-						  <button type="button" id="ito4w" py-click="main.run()">Calculate</button>
-						  <div id="iue8m">Tax to Levy:</div>
-					  </div>
-						<div class="gjs-cell" id="ikugp">
-						  <select type="text" id="ikboe" name="Budget">
-						  <option value="--Select Budget--">--Select Budget--</option>
-						  <option value="June 2023">June 2023</option>
-						  <option value="Summer 2023">Summer 2023</option>
-						  </select>
-					  </div>
+			  <div id="igaqu">Income Tax Calculator
+			  </div>
+			  <div class="gjs-row" id="ifcs7">
+				<div class="gjs-cell" id="iyvd8">
+				  <button type="button" id="ig9fl">Parse Values</button>
+				  <div id="if4rm">Bands - Enter as comma separated values 
+					<b id="iyvul">only
+					</b>.
 				  </div>
-		  </body>
+				  <input type="text" id="i2t08" name="bands-box" placeholder="12500,20000,35000,50000,75000,90000"/>
+				  <div id="i06uj">Rates - Enter as comma separated values 
+					<b id="iyar2">only
+					</b>.
+				  </div>
+				  <input type="text" name="rates-box" id="ie9a9" placeholder="0.1,0.175,0.25,0.375,0.4,0.45"/>
+				  <div id="il70g">________________________________________________________________________________________________
+				  </div>
+				  <div id="tax-value" title="TaxValue">£0.00
+				  </div>
+				  <div id="iq5ac">Salary - Enter as numerical value 
+					<b id="i1m0t">only
+					</b>.
+				  </div>
+				  <input type="number" name="salary-box" placeholder="" id="ivtm8"/>
+				  <button type="button" id="ito4w">Calculate</button>
+				  <div id="iue8m">Tax to Levy:
+				  </div>
+				</div>
+				<div class="gjs-cell" id="ikugp">
+				  <div id="i78tr">
+					<div role="tablist" class="tab-container" id="i3g4q">
+					  <div role="tab" aria-controls="is3if" id="igkld" class="tab">
+						<span id="invws">Bands</span>
+					  </div>
+					  <div role="tab" aria-controls="itmqz" id="iwhxo" class="tab">
+						<span id="ivl42">Rates</span>
+					  </div>
+					  <div role="tab" aria-controls="isqfdf" id="iz6w6" class="tab">
+						<span id="izcqf">Parse Values</span>
+					  </div>
+					  <div role="tab" aria-controls="iacj4z" id="ivowgp" class="tab">
+						<span id="ii99le">Salary</span>
+					  </div>
+					</div>
+					<div class="tab-contents" id="i9cyf">
+					  <div role="tabpanel" id="is3if" aria-labelledby="igkld" hidden class="tab-content">
+						<div id="i4sq7">
+						  <b>Bands
+						  </b> are entered as the 
+						  <b>lowest value
+						  </b> of the band to be taxed at x%. For example, if £12,500 was your first band and £20,000 was your second, the band of £12,500-£19,999 would be taxed at the first rate entered. Bands must be entered as 
+						  <b>comma separated values
+						  </b>, e.g. 12500,20000,35000,etc. The calculator can strip whitespace, but it is best practice to enter all characters adjacent with 
+						  <b>no spaces
+						  </b>.
+						  <br/>
+						</div>
+					  </div>
+					  <div role="tabpanel" id="itmqz" aria-labelledby="iwhxo" hidden class="tab-content">
+						<div id="ibw4j">
+						  <b id="ixles">Rates
+						  </b> are entered as a 
+						  <b>decimal
+						  </b> representation of the respective band's percentage i.e. 0.1 for 10% and so on. Rates must be entered as 
+						  <b>comma separated values
+						  </b>. The 
+						  <b>first rate
+						  </b> entered will correlate to the 
+						  <b>first band
+						  </b> entered as described above.
+						  <br/>
+						</div>
+					  </div>
+					  <div role="tabpanel" id="isqfdf" aria-labelledby="iz6w6" hidden class="tab-content">
+						<div id="i5jdmo">
+						  <b>Parse values
+						  </b> reads the bands and rates you have entered, strips any space, and stores them ready for calculation. This procedure is automatically triggered when you press 
+						  <b>Calculate
+						  </b>.
+						</div>
+					  </div>
+					  <div role="tabpanel" id="iacj4z" aria-labelledby="ivowgp" hidden class="tab-content">
+						<div id="i97zqr">
+						  <b>Salary
+						  </b> is a numeric-only entrance field for the salary to be taxed. You must 
+						  <b>only
+						  </b> enter the 
+						  <b>numerical representation
+						  </b> of the salary - e.g. £15,000 = 15000
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</body>
+			<script>var props = {
+				"i78tr":{
+				  "classactive":"tab-active","selectortab":"aria-controls"}
+			  };
+			  var ids = Object.keys(props).map(function(id) {
+				return '#'+id }
+											  ).join(',');
+			  var els = document.querySelectorAll(ids);
+			  for (var i = 0, len = els.length; i < len; i++) {
+				var el = els[i];
+				(function(t){
+				  var e,n,r=this,o=t.classactive,a=t.selectortab,c=window,i=c.history,s=c._isEditor,b='[role=tab]',p=document,l=p.body,u=p.location,f=l.matchesSelector||l.webkitMatchesSelector||l.mozMatchesSelector||l.msMatchesSelector,y=function(t,e){
+					for(var n=t||[],r=0;r<n.length;r++)e(n[r],r)}
+				  ,d=function(t){
+					return t.getAttribute(a)}
+				  ,O=function(t,e){
+					return t.querySelector(e)}
+				  ,g=function(){
+					return r.querySelectorAll(b)}
+				  ,j=function(t,e){
+					return!s&&(t.tabIndex=e)}
+				  ,h=function(t){
+					y(g(),(function(t){
+					  t.className=t.className.replace(o,'').trim(),t.ariaSelected='false',j(t,'-1')}
+						  )),y(r.querySelectorAll("[role=tabpanel]"),(function(t){
+					  return t.hidden=!0}
+																	 )),t.className+=' '+o,t.ariaSelected='true',j(t,'0');
+					var e=d(t),n=e&&O(r,"#".concat(e));
+					n&&(n.hidden=!1)}
+				  ,v=O(r,".".concat(o).concat(b));
+				  (v=v||(n=(u.hash||'').replace('#',''))&&O(r,(e=a,"".concat(b,"[").concat(e,"=").concat(n,"]")))||O(r,b))&&h(v),r.addEventListener('click',(function(t){
+					var e=t.target,n=f.call(e,b);
+					if(n||(e=function(t){
+					  var e;
+					  return y(g(),(function(n){
+						e||n.contains(t)&&(e=n)}
+								   )),e}
+						   (e))&&(n=1),n&&!t.__trg&&e.className.indexOf(o)<0){
+					  t.preventDefault(),t.__trg=1,h(e);
+					  var r=d(e);
+					  try{
+						i&&i.pushState(null,null,"#".concat(r))}
+					  catch(t){
+					  }
+					}
+				  }
+																																							))}
+				 .bind(el))(props[el.id]);
+			  }
+			</script>
         </html>
