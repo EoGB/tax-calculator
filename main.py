@@ -1,5 +1,3 @@
-import time
-
 class main():
 
     def __init__(self, rates, bands):
@@ -27,14 +25,15 @@ class main():
         bandIndex = self.determineBands()
         if type(bandIndex) == str:
             print("no tax levied")
-            #self.run()
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("tax-value")
         taxBox.element.innerText = "£"+str(totalTax)
         #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
-        #self.run()
+
 
 def parseRatesAndBands():
+    rates = []
+    bands = []
     try:
         rates = Element("ie9a9").value.split(",")
         for i in rates:
@@ -42,16 +41,17 @@ def parseRatesAndBands():
         bands = Element("i2t08").value.split(",")
         for j in bands:
             bands[bands.index(j)] = float(j.strip())
-        global main
-        main = main(rates, bands)
+        global instance
+        instance = main(rates, bands)
     except:
         taxBox = Element("tax-value")
-        taxBox.element.innerText = "err: parse rates and bands failed"
+        taxBox.element.innerText = "err << parse rates and bands failed at parse time"
 
 def start():
     try:
         parseRatesAndBands()
-        main.run()
+        instance.run()
     except:
         taxBox = Element("tax-value")
-        taxBox.element.innerText = "err: parse rates and bands failed"
+        taxBox.element.innerText = "err << run failed potential object error"
+

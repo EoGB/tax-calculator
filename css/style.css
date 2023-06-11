@@ -76,8 +76,15 @@ body {
   flex-grow:1;
   flex-basis:100%;
 }
+#iyvd8{
+  border:2px solid #8d8d8d;
+  border-radius: 5px 5px 5px 5px;
+  padding: 2px;
+}
 #ikugp{
   border:2px solid #980000;
+  border-radius: 5px 5px 5px 5px;
+  padding: 2px;
 }
 #ifcs7{
   height:582px;
@@ -162,7 +169,7 @@ body {
 #i4sq7{
   padding:10px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
-  font-size:19px;
+  font-size:18px;
 }
 #ibw4j{
   padding:10px;
@@ -184,6 +191,8 @@ body {
 }
 .tab-container{
   display:inline-block;
+  border:2px solid #8d8d8d;
+  border-radius: 5px 5px 5px 5px;
 }
 .tab-content{
   animation:fadeEffect 1s;
@@ -425,6 +434,7 @@ html {
     background-color: transparent;
     background-image: none;
     -webkit-appearance: button;
+    appearance: button;
     text-transform: none;
     font-family: inherit;
     font-size: 100%;
