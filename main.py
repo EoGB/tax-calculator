@@ -16,7 +16,7 @@ class main():
             if not x == bandIndex:
                 levy += (self.bands[x+1] - self.bands[x]) * self.rates[x]
             elif x == bandIndex:
-                levy += (self.salary - self.bands[x]) * self.rates[x]
+                levy += (self.salary - (self.bands[x]-1)) * self.rates[x]
         return levy
                 
     def run(self):
