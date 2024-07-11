@@ -41,16 +41,14 @@ def parseRatesAndBands():
         bands = Element("i2t08").value.split(",")
         for j in bands:
             bands[bands.index(j)] = float(j.strip())
-        global instance
-        instance = main(rates, bands)
+        return main(rates, bands)
     except:
         taxBox = Element("tax-value")
         taxBox.element.innerText = "err << parse rates and bands failed at parse time"
 
 def start():
     try:
-        parseRatesAndBands()
-        instance.run()
+        parseRatesAndBands().run()
     except:
         taxBox = Element("tax-value")
         taxBox.element.innerText = "err << run failed potential object error"
