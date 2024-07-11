@@ -6,19 +6,19 @@ class main():
 
     def determineBands(self):
         for i in range(len(self.bands)):
-            if i==(len(self.bands)-1) or self.salary >= self.bands[i] and self.salary < self.bands[i+1]:
+            if i == (len(self.bands) - 1) or self.salary >= self.bands[i] and self.salary < self.bands[i + 1]:
                 return i
         return "X"
 
     def recurseTax(self, bandIndex):
         levy = 0
-        for x in range(bandIndex+1):
+        for x in range(bandIndex + 1):
             if not x == bandIndex:
-                levy += (self.bands[x+1] - self.bands[x]) * self.rates[x]
+                levy += (self.bands[x + 1] - self.bands[x]) * self.rates[x]
             elif x == bandIndex:
-                levy += (self.salary - (self.bands[x]-1)) * self.rates[x]
+                levy += (self.salary - (self.bands[x] - 1)) * self.rates[x]
         return levy
-                
+
     def run(self):
         salaryBox = Element("ivtm8")
         self.salary = float(salaryBox.element.value)
@@ -27,8 +27,8 @@ class main():
             print("no tax levied")
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("tax-value")
-        taxBox.element.innerText = "£"+str(round(float(totalTax),2))
-        #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
+        taxBox.element.innerText = "£" + str(round(totalTax, 2))
+        # print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
 
 
 def parseRatesAndBands():
@@ -41,15 +41,17 @@ def parseRatesAndBands():
         bands = Element("i2t08").value.split(",")
         for j in bands:
             bands[bands.index(j)] = float(j.strip())
-        return main(rates, bands)
+        return_object = main(rates, bands)
+        return return_object
     except:
         taxBox = Element("tax-value")
         taxBox.element.innerText = "err << parse rates and bands failed at parse time"
 
+
 def start():
     try:
-        parseRatesAndBands().run()
+        taxObject = parseRatesAndBands()
+        taxObject.run()
     except:
         taxBox = Element("tax-value")
         taxBox.element.innerText = "err << run failed potential object error"
-
