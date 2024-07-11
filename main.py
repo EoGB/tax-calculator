@@ -27,7 +27,7 @@ class main():
             print("no tax levied")
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("tax-value")
-        taxBox.element.innerText = "£" + str(totalTax)
+        taxBox.element.innerText = "£" + str(round(totalTax,2))
         # print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
 
 
@@ -41,8 +41,8 @@ def parseRatesAndBands():
         bands = Element("i2t08").value.split(",")
         for j in bands:
             bands[bands.index(j)] = float(j.strip())
-        return_object = main(rates, bands)
-        return return_object
+        global instance
+        instance = main(rates, bands)
     except:
         taxBox = Element("tax-value")
         taxBox.element.innerText = "err << parse rates and bands failed at parse time"
@@ -50,8 +50,8 @@ def parseRatesAndBands():
 
 def start():
     try:
-        taxObject = parseRatesAndBands()
-        taxObject.run()
+        parseRatesAndBands()
+        instance.run()
     except:
         taxBox = Element("tax-value")
         taxBox.element.innerText = "err << run failed potential object error"
