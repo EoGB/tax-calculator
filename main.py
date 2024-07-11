@@ -27,7 +27,7 @@ class main():
             print("no tax levied")
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("tax-value")
-        taxBox.element.innerText = "£"+str(round(float(totalTax)),2)
+        taxBox.element.innerText = "£"+str(round(float(totalTax),2))
         #print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
 
 
