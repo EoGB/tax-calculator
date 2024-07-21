@@ -23,7 +23,7 @@ class main():
         salaryBox = Element("ivtm8")
         self.salary = float(salaryBox.element.value)
         bandIndex = self.determineBands()
-        if type(bandIndex) == str:
+        if bandIndex == "X":
             print("no tax levied")
         totalTax = self.recurseTax(bandIndex)
         taxBox = Element("tax-value")
