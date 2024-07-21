@@ -5,9 +5,9 @@ class main():
         self.bands = bands
 
     def determineBands(self):
+        if self.salary < self.bands[0]:
+            return "N"
         for i in range(len(self.bands)):
-            if i == 0 and self.salary<self.bands[i]:
-                return "N"
             if i == (len(self.bands) - 1) or self.salary >= self.bands[i] and self.salary < self.bands[i + 1]:
                 return i
         return "X"
@@ -26,7 +26,7 @@ class main():
         taxBox = Element("tax-value")
         self.salary = float(salaryBox.element.value)
         bandIndex = self.determineBands()
-        if bandIndex is str:
+        if bandIndex == "N":
             taxBox.element.innerText = "No tax levy"
         else :
             totalTax = self.recurseTax(bandIndex)
