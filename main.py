@@ -6,6 +6,8 @@ class main():
 
     def determineBands(self):
         for i in range(len(self.bands)):
+            if i == 0 and self.salary<self.bands[i]:
+                return "N"
             if i == (len(self.bands) - 1) or self.salary >= self.bands[i] and self.salary < self.bands[i + 1]:
                 return i
         return "X"
