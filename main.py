@@ -24,7 +24,7 @@ class main():
         taxBox = Element("tax-value")
         self.salary = float(salaryBox.element.value)
         bandIndex = self.determineBands()
-        if type(bandIndex) is str:
+        if bandIndex is str:
             taxBox.element.innerText = "No tax levy"
         else :
             totalTax = self.recurseTax(bandIndex)
