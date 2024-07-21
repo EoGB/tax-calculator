@@ -21,13 +21,14 @@ class main():
 
     def run(self):
         salaryBox = Element("ivtm8")
+        taxBox = Element("tax-value")
         self.salary = float(salaryBox.element.value)
         bandIndex = self.determineBands()
         if type(bandIndex) is str:
-            print("no tax levied")
-        totalTax = self.recurseTax(bandIndex)
-        taxBox = Element("tax-value")
-        taxBox.element.innerText = "£" + str(round(totalTax,2))
+            taxBox.element.innerText = "No tax levy"
+        else :
+            totalTax = self.recurseTax(bandIndex)
+            taxBox.element.innerText = "£" + str(round(totalTax,2))
         # print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
 
 
