@@ -22,20 +22,19 @@ class main():
         return levy
 
     def run(self):
-        salaryBox = Element("ivtm8")
-        taxBox = Element("tax-value")
-        self.salary = float(salaryBox.element.value)
+        self.salary = float(input("enter salary"))
         bandIndex = self.determineBands()
         if bandIndex == "N":
-            taxBox.element.innerText = "No tax levy"
+            print("No tax levy")
         else :
             totalTax = self.recurseTax(bandIndex)
             taxAmount = str(round(totalTax,2))
             split = taxAmount.split(".")
+            print(split)
             if len(split[1]) < 2:
                 split[1] = f".{split[1]}0"
                 taxAmount = split[0]+split[1]
-            taxBox.element.innerText = "£" + taxAmount
+            print("LEVY : £" + taxAmount)
         # print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
 
 
@@ -43,17 +42,16 @@ def parseRatesAndBands():
     rates = []
     bands = []
     try:
-        rates = Element("ie9a9").value.split(",")
+        rates = "0.1,0.125,0.15,0.175".split(",")
         for i in rates:
             rates[rates.index(i)] = float(i.strip())
-        bands = Element("i2t08").value.split(",")
+        bands = "5001,15001,25001,35001".split(",")
         for j in bands:
             bands[bands.index(j)] = float(j.strip())
         global instance
         instance = main(rates, bands)
     except:
-        taxBox = Element("tax-value")
-        taxBox.element.innerText = "err << parse rates and bands failed at parse time"
+        print("err << parse rates and bands failed at parse time")
 
 
 def start():
@@ -61,5 +59,7 @@ def start():
         parseRatesAndBands()
         instance.run()
     except:
-        taxBox = Element("tax-value")
-        taxBox.element.innerText = "err << run failed potential object error"
+        print("err << run failed potential object error")
+
+
+start()
