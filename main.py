@@ -30,7 +30,12 @@ class main():
             taxBox.element.innerText = "No tax levy"
         else :
             totalTax = self.recurseTax(bandIndex)
-            taxBox.element.innerText = "£" + str(round(totalTax,2))
+            taxAmount = str(round(totalTax,2))
+            split = taxAmount.split(",")
+            if len(split[1]) < 2:
+                split[1] = f"{split[1]}0"
+                taxAmount = split[0]+split[1]
+            taxBox.element.innerText = "£" + taxAmount
         # print(f"Band Index: {bandIndex} \nTax levied: {totalTax}")
 
 
