@@ -77,14 +77,18 @@ body {
   flex-basis:100%;
 }
 #iyvd8{
-  border:2px solid #8d8d8d;
+  border:2px solid #e0e0e0;
+  background: #fefefe;
   border-radius: 5px 5px 5px 5px;
   padding: 2px;
+  margin: 5px;
 }
 #ikugp{
   border:2px solid #980000;
+  background: #fae6e6;
   border-radius: 5px 5px 5px 5px;
   padding: 2px;
+  margin: 5px;
 }
 #ifcs7{
   height:582px;
