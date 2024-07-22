@@ -5,7 +5,7 @@ class main():
         self.bands = bands
 
     def determineBands(self):
-        if float(self.salary) <= float(self.bands[0]):
+        if float(self.salary) < float(self.bands[0]):
             return "N"
         for i in range(len(self.bands)):
             if i == (len(self.bands) - 1) or self.salary >= self.bands[i] and self.salary < self.bands[i + 1]:
