@@ -35,9 +35,7 @@ body {
 #tax-value{
   padding:10px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
-  position:absolute;
-  display:block;
-  margin:167px 0px 0px 189px;
+  margin:0px 0px 0px 20px;
   font-size:27px;
 }
 #ito4w{
@@ -91,21 +89,21 @@ body {
   margin: 5px;
 }
 #ifcs7{
-  height:582px;
+  height:750px;
   margin:-2px 0px 0px 0px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
   border:0px solid #980000;
 }
 #ipzpk{
   color:black;
-  width:200px;
+  width:125px;
 }
 #igaqu{
-  padding:10px;
+  padding:0px 0px 0px 10px;
+  margin:15px 0px 0px 0px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
-  font-size:61px;
-  position:absolute;
-  margin:-146px 0px 0px 590px;
+  font-size:48px;
+  color:#fefefe;
 }
 #ig9fl{
   width:166px;
@@ -114,7 +112,7 @@ body {
   font-family:Trebuchet MS, Helvetica, sans-serif;
   border-radius:5px 5px 5px 5px;
   margin:50px 0px 0px 627px;
-  border:2px solid #309100;
+  border:2px solid #980000;
   font-size:20px;
   transition:all 1s ease;
 }
@@ -128,7 +126,7 @@ body {
   background-position:left top;
   background-attachment:scroll;
   background-size:auto;
-  background-image:linear-gradient(#309100 0%, #309100 100%);
+  background-image:linear-gradient(#980000 0%, #980000 100%);
   color:#ffffff;
 }
 #i06uj{
@@ -162,11 +160,19 @@ body {
   margin:38px 0px 0px 23px;
   font-size:27px;
 }
+#tax-border{
+	display:flex;
+	border:2px solid #0f0f0f;
+	background:#efefef;
+	padding:15px;
+	justify-content: center;
+	align-items: center;
+	height:70px
+}
 #iue8m{
-  padding:10px;
   font-family:Trebuchet MS, Helvetica, sans-serif;
   position:absolute;
-  display:block;
+  display:flex;
   margin:44px 0px 0px 18px;
   font-size:27px;
 }
@@ -190,8 +196,8 @@ body {
   outline:none;
 }
 .tab.tab-active{
-  background-color:#0d94e6;
-  color:white;
+  background-color:#980000;
+  color:#fefefe;
 }
 .tab-container{
   display:inline-block;

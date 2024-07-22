@@ -9,14 +9,15 @@
 			<script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
           </head>
 		  
-          <body id="icpo">
+          <body id="icpo" style="background:#fefefe">
 		  <py-config src="./pyscript.toml"></py-config>
 			<py-script src="./main.py"></py-script>
-			<div background="#980000">
+			<div style="background:#980000;padding:25px;border:2px solid #540101;display:flex;justify-content:left;vertical-align:middle">
 			  <img id="ipzpk" src="https://i.imgur.com/a3xz3wV.png"/>
 			  <div id="igaqu">Income Tax Calculator
 			  </div>
 			  </div>
+			  
 			  <div class="gjs-row" id="ifcs7">
 				<div class="gjs-cell" id="iyvd8">
 				  <button type="button" id="ig9fl" py-click="parseRatesAndBands()">Parse Values</button>
@@ -32,15 +33,17 @@
 				  <input type="text" name="rates-box" id="ie9a9" value="0.1,0.125,0.15,0.175" placeholder="Tax Rates"/>
 				  <div id="il70g">________________________________________________________________________________________________
 				  </div>
-				  <div id="tax-value" title="TaxValue">£0.00
-				  </div>
+				  
 				  <div id="iq5ac">Salary - Enter as numerical value 
 					<b id="i1m0t">only
 					</b>.
 				  </div>
 				  <input type="text" name="salary-box" placeholder="Enter Salary" id="ivtm8"/>
 				  <button type="button" id="ito4w" py-click="start()">Calculate</button>
-				  <div id="iue8m"><div style="border:2px solid #0f0f0f;background:#fefefe">Tax to Levy:</div>
+				  <div id="iue8m"><div id="tax-border">Tax to Levy:
+				  <div id="tax-value" title="TaxValue">£0.00
+				  </div>
+				  </div>
 				  </div>
 				</div>
 				<div class="gjs-cell" id="ikugp">
@@ -110,14 +113,16 @@
 						</div>
 					  </div>
 					  <div role="tabpanel" id="izr8bh" aria-labelledby="ir5k0h" hidden class="tab-content">
-						<iframe src="https://docs.google.com/spreadsheets/d/1QuUeVr5Toy_cKzBm3nhxQbQy9LTfhYjj0FTeS1Rm8QY/edit?usp=sharing" width="900" height="500"></iframe>
+						<iframe src="https://docs.google.com/spreadsheets/d/1QuUeVr5Toy_cKzBm3nhxQbQy9LTfhYjj0FTeS1Rm8QY/edit?usp=sharing" width="900" height="650" title="Tax Sheet"></iframe>
 						</div>
 					</div>
 				  </div>
 				</div>
 			  </div>
-			  <div align="center" style="padding:45px;font-family:Trebuchet MS, Helvetica, sans-serif;">
-				Made by William Somerset for HM Treasury
+			  <div align="center" style="padding:45px;font-family:Trebuchet MS, Helvetica, sans-serif;background:#980000;border:2px solid #540101;color:#fefefe;">
+				<p><b>By Will Designs for HM Treasury</b>
+				<br><i>© William Somerset and all associated aliases</i>
+				</p>
 			  </div>
 			</body>
 			<script>var props = {
